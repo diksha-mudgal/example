@@ -1,9 +1,11 @@
 export default function Home() {
   const year = new Date().getFullYear();
   return (
-    <div className="font-sans min-h-screen bg-background text-foreground">
+    <div className="font-sans min-h-screen bg-background text-foreground relative overflow-hidden">
+      <div className="aurora"></div>
+      <div className="grid-overlay"></div>
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-background/80 backdrop-blur border-b border-black/10 dark:border-white/10">
+      <header className="sticky top-0 z-10 glass border-b border-black/10 dark:border-white/10">
         <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
           <a href="#" className="text-xl font-semibold tracking-tight">Geeksman</a>
           <nav className="hidden sm:flex gap-6 text-sm">
@@ -20,10 +22,10 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">Building reliable software that grows your business.</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">Building reliable software that grows your business.</h1>
             <p className="mt-4 text-base sm:text-lg text-black/70 dark:text-white/70">Geeksman is a software services studio specializing in custom web & mobile apps, cloud-native solutions, and delightful user experiences. We ship fast, maintain quality, and scale with you.</p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-foreground text-background px-5 py-3 text-sm font-medium hover:opacity-90">Get a free consultation</a>
+              <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-white px-5 py-3 text-sm font-medium shadow-lg shadow-violet-500/20 hover:opacity-90">Get a free consultation</a>
               <a href="#portfolio" className="inline-flex items-center justify-center rounded-md border border-black/10 dark:border-white/15 px-5 py-3 text-sm font-medium hover:bg-black/[.04] dark:hover:bg-white/[.06]">View our work</a>
             </div>
             <div className="mt-6 flex gap-6 opacity-80 text-sm">
@@ -31,7 +33,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="aspect-video rounded-xl border border-black/10 dark:border-white/15 bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
+            <div className="aspect-video rounded-xl glass neon-border bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)] opacity-80" />
           </div>
         </div>
       </section>
@@ -49,7 +51,7 @@ export default function Home() {
             { title: "Product Modernization", desc: "Migrate monoliths, refactor legacy, improve reliability." },
             { title: "Maintenance & Support", desc: "SLA-backed support, monitoring, and continuous improvements." },
           ].map((s) => (
-            <div key={s.title} className="rounded-lg border border-black/10 dark:border-white/15 p-5 hover:shadow-sm transition">
+            <div key={s.title} className="rounded-lg glass p-5 transition will-change-transform hover:-translate-y-0.5 hover:shadow-xl hover:shadow-violet-500/10">
               <h3 className="font-medium text-lg">{s.title}</h3>
               <p className="mt-2 text-sm text-black/70 dark:text-white/70">{s.desc}</p>
             </div>
@@ -67,7 +69,7 @@ export default function Home() {
             { name: "E-commerce Mobile App", stack: "Flutter, Firebase", color: "from-indigo-500/20 to-indigo-700/20" },
             { name: "Workflow Automation", stack: "React, Python, AWS", color: "from-rose-500/20 to-rose-700/20" },
           ].map((p) => (
-            <div key={p.name} className="group rounded-lg overflow-hidden border border-black/10 dark:border-white/15">
+            <div key={p.name} className="group rounded-lg overflow-hidden glass transition will-change-transform hover:-translate-y-0.5 hover:shadow-xl hover:shadow-violet-500/10">
               <div className={`h-40 bg-gradient-to-br ${p.color}`} />
               <div className="p-4">
                 <h3 className="font-medium">{p.name}</h3>
@@ -100,7 +102,7 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
-        <div className="rounded-xl border border-black/10 dark:border-white/15 p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="rounded-xl glass p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Ready to build?</h2>
             <p className="mt-2 text-black/70 dark:text-white/70">Tell us about your project and we’ll get back within 1 business day.</p>
